@@ -1,6 +1,6 @@
 # AntiScam — Dokumentasi Proyek & Spesifikasi Teknis
 
-Selamat datang di repositori dokumentasi teknis **AntiScam**. Folder `doss/` ini memuat seluruh panduan arsitektur, spesifikasi fungsional, standar desain, kontrak data API, dan kebijakan privasi untuk pengembangan aplikasi web AntiScam.
+Selamat datang di repositori dokumentasi teknis **tumbasna**. Folder `doss/` ini memuat seluruh panduan arsitektur, spesifikasi fungsional, standar desain, kontrak data API, dan kebijakan privasi untuk pengembangan aplikasi web AntiScam.
 
 ---
 
