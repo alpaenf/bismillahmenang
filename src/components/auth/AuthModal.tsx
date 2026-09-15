@@ -34,28 +34,55 @@ export function AuthModal({ isOpen, onClose, defaultMode = 'login' }: AuthModalP
     try {
       if (mode === 'login') {
         const { error } = await supabase.auth.signInWithPassword({
-          email,
+          email: email.trim(),
           password,
         });
         if (error) throw error;
         onClose();
         window.location.reload();
       } else {
-        const { error } = await supabase.auth.signUp({
-          email,
+        const { data, error } = await supabase.auth.signUp({
+          email: email.trim(),
           password,
           options: {
             data: {
-              full_name: fullName,
+              full_name: fullName.trim(),
             },
           },
         });
         if (error) throw error;
-        setSuccessMsg('Pendaftaran berhasil. Silakan periksa kotak masuk email Anda untuk verifikasi atau masuk langsung.');
+
+        // Jika konfirmasi email dimatikan di Supabase, session langsung tersedia
+        if (data?.session) {
+          onClose();
+          window.location.reload();
+        } else {
+          setSuccessMsg(
+            'Pendaftaran berhasil! Jika konfirmasi email aktif di Supabase Anda, silakan periksa inbox/spam email Anda. Atau Anda bisa langsung mencoba Masuk sekarang.'
+          );
+        }
       }
     } catch (err: unknown) {
-      const msg = err instanceof Error ? err.message : 'Terjadi kesalahan autentikasi.';
-      setErrorMsg(msg);
+      let rawMsg = err instanceof Error ? err.message : 'Terjadi kesalahan autentikasi.';
+      let friendlyMsg = rawMsg;
+
+      if (rawMsg.includes('Email not confirmed')) {
+        friendlyMsg = 'Email Anda belum dikonfirmasi. Buka email Anda untuk klik tautan verifikasi, atau matikan fitur "Confirm email" di Dashboard Supabase (Authentication > Providers > Email).';
+      } else if (rawMsg.includes('User already registered') || rawMsg.includes('already registered')) {
+        friendlyMsg = 'Alamat email ini sudah terdaftar. Silakan pindah ke tab "Masuk" untuk login.';
+      } else if (rawMsg.includes('email_address_invalid') || rawMsg.includes('invalid') && rawMsg.includes('email')) {
+        friendlyMsg = 'Alamat email tidak valid. Pastikan Anda memasukkan email asli (contoh: nama@gmail.com).';
+      } else if (rawMsg.includes('Password should be at least') || rawMsg.includes('at least 6 characters')) {
+        friendlyMsg = 'Kata sandi minimal harus 6 karakter.';
+      } else if (rawMsg.includes('rate limit') || rawMsg.includes('over_email_send_rate_limit')) {
+        friendlyMsg = 'Batas pengiriman email Supabase gratis tercapai. Harap nonaktifkan toggle "Confirm email" di Dashboard Supabase (Authentication > Providers > Email) agar pendaftaran tidak dibatasi.';
+      } else if (rawMsg.includes('Failed to fetch') || rawMsg.includes('NetworkError')) {
+        friendlyMsg = 'Gagal menghubungi server Supabase. Pastikan NEXT_PUBLIC_SUPABASE_URL dan NEXT_PUBLIC_SUPABASE_ANON_KEY sudah disetting di Vercel Environment Variables.';
+      } else if (rawMsg.includes('Invalid login credentials')) {
+        friendlyMsg = 'Email atau kata sandi salah. Silakan periksa kembali.';
+      }
+
+      setErrorMsg(friendlyMsg);
     } finally {
       setIsLoading(false);
     }
@@ -74,8 +101,11 @@ export function AuthModal({ isOpen, onClose, defaultMode = 'login' }: AuthModalP
       });
       if (error) throw error;
     } catch (err: unknown) {
-      const msg = err instanceof Error ? err.message : 'Gagal menghubungkan ke Google.';
-      setErrorMsg(msg);
+      let rawMsg = err instanceof Error ? err.message : 'Gagal menghubungkan ke Google.';
+      if (rawMsg.includes('Failed to fetch')) {
+        rawMsg = 'Gagal menghubungi Supabase. Pastikan environment variables sudah diatur di Vercel.';
+      }
+      setErrorMsg(rawMsg);
       setIsGoogleLoading(false);
     }
   };

@@ -184,16 +184,7 @@ export function Navbar() {
           </div>
 
           {/* Mobile Hamburger Button */}
-          <div className="md:hidden flex items-center gap-2">
-            {!user && (
-              <button
-                type="button"
-                onClick={() => setIsAuthModalOpen(true)}
-                className="px-2.5 py-1.5 rounded-lg text-xs font-bold text-black border border-border"
-              >
-                Masuk
-              </button>
-            )}
+          <div className="md:hidden flex items-center">
             <button
               type="button"
               onClick={() => setIsOpen(!isOpen)}
