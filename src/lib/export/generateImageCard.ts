@@ -2,7 +2,7 @@ import { toPng } from 'html-to-image';
 
 export async function downloadElementAsImage(
   elementId: string,
-  fileName: string = 'antiscam-report.png'
+  fileName: string = 'tumbasna-report.png'
 ): Promise<void> {
   const element = document.getElementById(elementId);
   if (!element) {

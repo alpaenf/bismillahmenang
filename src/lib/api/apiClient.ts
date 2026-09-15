@@ -17,7 +17,7 @@ export async function postJson<TRequest, TResponse>(
   payload: TRequest
 ): Promise<TResponse> {
   // Jika endpoint internal /api/... dan API_BASE_URL tidak diatur / default, gunakan relative path Next.js
-  const url = endpoint.startsWith('/') && (!API_BASE_URL || API_BASE_URL.includes('api.antiscam.id'))
+  const url = endpoint.startsWith('/') && (!API_BASE_URL || API_BASE_URL.includes('api.antiscam.id') || API_BASE_URL.includes('tumbasna'))
     ? endpoint
     : `${API_BASE_URL.replace(/\/$/, '')}${endpoint}`;
 

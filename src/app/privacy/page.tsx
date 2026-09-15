@@ -3,9 +3,9 @@ import type { Metadata } from 'next';
 import { ShieldCheck, EyeOff, Lock, Trash2 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Kebijakan Privasi & Perlindungan Data PII | AntiScam',
+  title: 'Kebijakan Privasi & Perlindungan Data PII | Tumbasna',
   description:
-    'Komitmen AntiScam dalam melindungi data privasi pengguna, penyensoran otomatis data pribadi (PII masking), dan pemrosesan lokal.',
+    'Komitmen Tumbasna dalam melindungi data privasi pengguna, penyensoran otomatis data pribadi (PII masking), dan pemrosesan lokal.',
 };
 
 export default function PrivacyPage() {
@@ -18,7 +18,7 @@ export default function PrivacyPage() {
             Perlindungan Data Pribadi
           </div>
           <h1 className="text-3xl sm:text-4xl font-extrabold text-foreground tracking-tight">
-            Kebijakan Privasi AntiScam
+            Kebijakan Privasi Tumbasna
           </h1>
           <p className="text-xs sm:text-sm text-foreground-muted">
             Terakhir diperbarui: 31 Agustus 2026 • Selaras dengan UU PDP No. 27/2022

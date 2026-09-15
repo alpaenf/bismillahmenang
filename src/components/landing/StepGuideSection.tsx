@@ -15,7 +15,7 @@ export function StepGuideSection() {
     {
       num: '02',
       title: 'Sistem Menganalisis Pola',
-      desc: 'AntiScam memeriksa kata kunci ancaman, link phising, file APK, desakan waktu, dan modus rekayasa sosial.',
+      desc: 'Tumbasna memeriksa kata kunci ancaman, link phising, file APK, desakan waktu, dan modus rekayasa sosial.',
       icon: <Cpu className="w-5 h-5 text-foreground" aria-hidden="true" />,
     },
     {
@@ -35,7 +35,7 @@ export function StepGuideSection() {
               Alur Pemeriksaan
             </div>
             <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight">
-              Cara Kerja AntiScam dalam 3 Langkah
+              Cara Kerja Tumbasna dalam 3 Langkah
             </h2>
             <p className="text-sm sm:text-base text-foreground-secondary leading-relaxed">
               Proses pemeriksaan cepat, aman, dan mudah dipahami tanpa perlu pengetahuan teknis keamanan siber.

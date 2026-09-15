@@ -34,7 +34,7 @@ export default function HowItWorksPage() {
     {
       num: '01',
       title: 'Pilih Metode Input: Pesan Tunggal atau Chat WA',
-      desc: 'AntiScam mendukung dua opsi input sesuai format pesan yang Anda terima:',
+      desc: 'Tumbasna mendukung dua opsi input sesuai format pesan yang Anda terima:',
       items: [
         {
           title: 'Pesan Tunggal',
@@ -100,10 +100,10 @@ export default function HowItWorksPage() {
               Panduan & Metodologi Pemeriksaan
             </div>
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-foreground tracking-tight">
-              Bagaimana AntiScam Bekerja?
+              Bagaimana Tumbasna Bekerja?
             </h1>
             <p className="text-base sm:text-lg text-foreground-secondary max-w-2xl mx-auto leading-relaxed">
-              AntiScam mengombinasikan analisis pesan tunggal dan evaluasi percakapan WhatsApp untuk mengurai modus penipuan digital secara transparan.
+              Tumbasna mengombinasikan analisis pesan tunggal dan evaluasi percakapan WhatsApp untuk mengurai modus penipuan digital secara transparan.
             </p>
           </div>
         </ScrollReveal>
@@ -232,7 +232,7 @@ export default function HowItWorksPage() {
         <div className="space-y-8">
           <div className="text-center sm:text-left space-y-1">
             <h2 className="text-xl sm:text-2xl font-bold text-foreground">
-              Tahapan Analisis Sistem AntiScam
+              Tahapan Analisis Sistem Tumbasna
             </h2>
             <p className="text-xs sm:text-sm text-foreground-secondary">
               Bagaimana data diproses secara terstruktur mulai dari input hingga laporan rekomendasi.
@@ -292,7 +292,7 @@ export default function HowItWorksPage() {
         <ScrollReveal direction="up" delay={200}>
           <div className="bg-background-subtle border-2 border-border rounded-3xl p-6 sm:p-8 space-y-6">
             <h3 className="text-xl font-bold text-foreground">
-              Standar Tingkat Risiko AntiScam
+              Standar Tingkat Risiko Tumbasna
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="p-4 rounded-2xl bg-white border border-risk-low-border hover:shadow-md transition-shadow">
@@ -342,7 +342,7 @@ export default function HowItWorksPage() {
           <div className="text-center p-8 sm:p-12 bg-foreground text-white rounded-3xl space-y-4">
             <h3 className="text-2xl sm:text-3xl font-extrabold">Siap Menguji Pesan Anda?</h3>
             <p className="text-xs sm:text-sm text-gray-300 max-w-md mx-auto leading-relaxed">
-              Gunakan mesin pemeriksa AntiScam untuk memeriksa pesan teks mencurigakan atau riwayat chat WhatsApp secara instan.
+              Gunakan mesin pemeriksa Tumbasna untuk memeriksa pesan teks mencurigakan atau riwayat chat WhatsApp secara instan.
             </p>
             <div className="pt-3 flex flex-col sm:flex-row items-center justify-center gap-3">
               <Link href="/analyze">

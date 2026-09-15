@@ -78,7 +78,7 @@ export function DetectionCategories() {
               Kategori Penipuan yang Mampu Dikenali
             </h2>
             <p className="text-sm sm:text-base text-foreground-secondary leading-relaxed">
-              Pilih salah satu kategori di bawah untuk langsung menguji contoh kasus nyatanya pada mesin pemeriksa AntiScam.
+              Pilih salah satu kategori di bawah untuk langsung menguji contoh kasus nyatanya pada mesin pemeriksa Tumbasna.
             </p>
           </div>
         </ScrollReveal>

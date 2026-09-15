@@ -40,8 +40,8 @@ export function ExportReportMenu({ data, isWhatsApp = false }: ExportReportMenuP
     setIsExporting(true);
     try {
       await downloadElementAsImage(
-        'antiscam-result-dashboard',
-        `antiscam-audit-${data.id}.png`
+        'tumbasna-result-dashboard',
+        `tumbasna-audit-${data.id}.png`
       );
     } catch (e) {
       console.error(e);

@@ -23,7 +23,7 @@ export function downloadAnalysisPdf(
   doc.setTextColor(255, 255, 255);
   doc.setFont('helvetica', 'bold');
   doc.setFontSize(16);
-  doc.text('AntiScam — Laporan Analisis Risiko Keamanan', 15, 15);
+  doc.text('Tumbasna — Laporan Analisis Risiko Keamanan', 15, 15);
 
   let y = 36;
 
@@ -116,9 +116,9 @@ export function downloadAnalysisPdf(
   doc.setFontSize(8);
   doc.setTextColor(156, 163, 175);
   const disclaimerText =
-    'Disclaimer: Laporan ini dibuat secara otomatis oleh sistem deteksi pola AntiScam. Data percakapan diproses di sisi klien. Kunjungi https://antiscam.id untuk pemeriksaan mandiri.';
+    'Disclaimer: Laporan ini dibuat secara otomatis oleh sistem deteksi pola Tumbasna. Data percakapan diproses di sisi klien. Kunjungi https://tumbasna.my.id untuk pemeriksaan mandiri.';
   const splitDisc = doc.splitTextToSize(disclaimerText, 180);
   doc.text(splitDisc, 15, 280);
 
-  doc.save(`AntiScam-Report-${data.id}.pdf`);
+  doc.save(`Tumbasna-Report-${data.id}.pdf`);
 }

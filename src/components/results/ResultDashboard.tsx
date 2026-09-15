@@ -33,7 +33,7 @@ export function ResultDashboard({ data, onReset, isWhatsApp = false }: ResultDas
   }, [data.id]);
 
   return (
-    <div id="antiscam-result-dashboard" className="space-y-8 animate-in fade-in duration-300 min-h-[600px]">
+    <div id="tumbasna-result-dashboard" className="space-y-8 animate-in fade-in duration-300 min-h-[600px]">
       {/* Top Header & Actions */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-border">
         <div>

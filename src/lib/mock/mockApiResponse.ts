@@ -55,7 +55,7 @@ export async function simulateSingleMessageAnalysis(
           explanation: 'Segera blokir dan laporkan nomor pengirim sebagai penipuan.',
         },
       ],
-      disclaimer: 'Analisis dihasilkan secara otomatis oleh sistem deteksi pola AntiScam. Tetap waspada terhadap pengiriman file dari nomor tidak dikenal.',
+      disclaimer: 'Analisis dihasilkan secara otomatis oleh sistem deteksi pola Tumbasna. Tetap waspada terhadap pengiriman file dari nomor tidak dikenal.',
     };
   }
 

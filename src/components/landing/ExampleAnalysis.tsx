@@ -15,7 +15,7 @@ export function ExampleAnalysis() {
               Studi Kasus Nyata
             </div>
             <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight">
-              Lihat Bagaimana AntiScam Mengurai Penipuan
+              Lihat Bagaimana Tumbasna Mengurai Penipuan
             </h2>
             <p className="text-sm sm:text-base text-foreground-secondary leading-relaxed">
               Contoh hasil evaluasi instan pada pesan klaim hadiah fiktif yang sering beredar di WhatsApp dan SMS.
@@ -49,13 +49,13 @@ export function ExampleAnalysis() {
             </div>
           </ScrollReveal>
 
-          {/* Right: AntiScam Breakdown Result */}
+          {/* Right: Tumbasna Breakdown Result */}
           <ScrollReveal direction="right" distance={30} delay={200} className="h-full">
             <div className="bg-white border-2 border-risk-critical-border rounded-3xl p-6 sm:p-8 shadow-md flex flex-col justify-between space-y-6 h-full hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
               <div className="space-y-5">
                 <div className="flex items-center justify-between">
                   <span className="text-xs font-bold text-foreground-muted uppercase tracking-wider">
-                    Hasil Evaluasi AntiScam:
+                    Hasil Evaluasi Tumbasna:
                   </span>
                   <Badge variant="critical" size="sm">
                     CRITICAL RISK

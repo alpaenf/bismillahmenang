@@ -6,7 +6,7 @@ export function formatSingleAnalysisShareText(result: SingleAnalysisResponse): s
   const indicatorList = result.indicators.map((i) => `• ${i.title}`).join('\n');
   const recommendationList = result.recommendations.map((r) => `• ${r.actionText}`).join('\n');
 
-  return `🛡️ *HASIL DETEKSI ANTISCAM*
+  return `🛡️ *HASIL DETEKSI TUMBASNA*
 ━━━━━━━━━━━━━━━━━━━━
 Status Risiko: *${levelUpper}* (Skor: ${result.riskScore}/100)
 
@@ -19,8 +19,8 @@ ${indicatorList}
 💡 *Saran Tindakan:*
 ${recommendationList}
 
-🔗 *Cek pesan mencurigakan gratis di AntiScam:*
-https://antiscam.id
+🔗 *Cek pesan mencurigakan gratis di Tumbasna:*
+https://tumbasna.my.id
 ━━━━━━━━━━━━━━━━━━━━`.replace(/🛡️|📌|⚠️|💡|🔗/g, ''); // Ensure zero emoji even in string formatter
 }
 
@@ -29,7 +29,7 @@ export function formatWhatsAppAnalysisShareText(result: WhatsAppAnalysisResponse
   const indicatorList = result.indicators.map((i) => `- ${i.title}`).join('\n');
   const recommendationList = result.recommendations.map((r) => `- ${r.actionText}`).join('\n');
 
-  return `[HASIL DETEKSI CHAT ANTISCAM]
+  return `[HASIL DETEKSI CHAT TUMBASNA]
 ------------------------------------
 Status Risiko: ${levelUpper} (Skor: ${result.overallRiskScore}/100)
 Modus Terdeteksi: ${result.detectedScamType}
@@ -44,6 +44,6 @@ Saran Tindakan Keamanan:
 ${recommendationList}
 
 Periksa pesan WhatsApp mencurigakan lainnya di:
-https://antiscam.id
+https://tumbasna.my.id
 ------------------------------------`;
 }

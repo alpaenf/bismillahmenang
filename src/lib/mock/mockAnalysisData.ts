@@ -152,7 +152,7 @@ export const MOCK_SINGLE_HIGH_RISK: SingleAnalysisResponse = {
       explanation: 'Pihak resmi tidak pernah meminta data pribadi atau transfer uang untuk pencairan hadiah.',
     },
   ],
-  disclaimer: 'Hasil analisis dihasilkan secara otomatis oleh sistem deteksi pola AntiScam dan bukan jaminan hukum mutlak. Selalu verifikasi langsung ke pihak resmi.',
+  disclaimer: 'Hasil analisis dihasilkan secara otomatis oleh sistem deteksi pola Tumbasna dan bukan jaminan hukum mutlak. Selalu verifikasi langsung ke pihak resmi.',
 };
 
 export const MOCK_SINGLE_LOW_RISK: SingleAnalysisResponse = {
@@ -170,7 +170,7 @@ export const MOCK_SINGLE_LOW_RISK: SingleAnalysisResponse = {
       explanation: 'Selalu gunakan aplikasi resmi penyedia layanan untuk melacak status pesanan Anda.',
     },
   ],
-  disclaimer: 'Hasil analisis dihasilkan secara otomatis oleh sistem deteksi pola AntiScam.',
+  disclaimer: 'Hasil analisis dihasilkan secara otomatis oleh sistem deteksi pola Tumbasna.',
 };
 
 export const MOCK_WHATSAPP_APK_SCAM: WhatsAppAnalysisResponse = {
@@ -253,5 +253,5 @@ export const MOCK_WHATSAPP_APK_SCAM: WhatsAppAnalysisResponse = {
       explanation: 'Cek nomor resi asli hanya melalui website atau aplikasi resmi J&T Express.',
     },
   ],
-  disclaimer: 'Analisis percakapan WhatsApp diproses di memori lokal. AntiScam tidak menyimpan isi pesan chat Anda.',
+  disclaimer: 'Analisis percakapan WhatsApp diproses di memori lokal. Tumbasna tidak menyimpan isi pesan chat Anda.',
 };

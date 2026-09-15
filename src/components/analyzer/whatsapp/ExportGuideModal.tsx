@@ -47,7 +47,7 @@ export function ExportGuideModal({ isOpen, onClose }: ExportGuideModalProps) {
             <li>
               Pilih <strong>Tanpa Media (Without Media)</strong> (menghasilkan file <code className="bg-background-muted px-1.5 py-0.5 rounded text-foreground font-mono">.txt</code>).
             </li>
-            <li>Simpan atau kirim file teks tersebut ke perangkat Anda dan unggah ke AntiScam.</li>
+            <li>Simpan atau kirim file teks tersebut ke perangkat Anda dan unggah ke Tumbasna.</li>
           </ol>
         </div>
 
@@ -61,7 +61,7 @@ export function ExportGuideModal({ isOpen, onClose }: ExportGuideModalProps) {
             <li>Buka percakapan di WhatsApp, lalu ketuk nama kontak di bagian atas layar.</li>
             <li>Gulir ke bawah dan ketuk <strong>Ekspor Chat (Export Chat)</strong>.</li>
             <li>Pilih <strong>Tanpa Media (Without Media)</strong>.</li>
-            <li>Simpan file ke <em>Files</em> di iPhone Anda, lalu pilih file tersebut di AntiScam.</li>
+            <li>Simpan file ke <em>Files</em> di iPhone Anda, lalu pilih file tersebut di Tumbasna.</li>
           </ol>
         </div>
 

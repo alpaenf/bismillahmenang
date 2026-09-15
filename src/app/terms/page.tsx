@@ -4,9 +4,9 @@ import { AlertCircle, ShieldAlert, FileText, Ban } from 'lucide-react';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 
 export const metadata: Metadata = {
-  title: 'Syarat & Ketentuan Layanan | AntiScam',
+  title: 'Syarat & Ketentuan Layanan | Tumbasna',
   description:
-    'Syarat penggunaan layanan AntiScam, batasan tanggung jawab, serta disclaimer evaluasi risiko otomatis.',
+    'Syarat penggunaan layanan Tumbasna, batasan tanggung jawab, serta disclaimer evaluasi risiko otomatis.',
 };
 
 export default function TermsPage() {
@@ -44,7 +44,7 @@ export default function TermsPage() {
               </h2>
             </div>
             <p className="text-xs sm:text-sm leading-relaxed text-gray-300">
-              AntiScam adalah alat bantu edukasi berbasis deteksi pola. Hasil analisis skor risiko, indikator, dan rekomendasi bukan merupakan nasihat hukum, audit forensik resmi, atau jaminan mutlak bahwa sebuah pesan 100% aman atau 100% scam. Selalu gunakan pertimbangan akal sehat dan verifikasi mandiri ke kontak resmi institusi terkait.
+              Tumbasna adalah alat bantu edukasi berbasis deteksi pola. Hasil analisis skor risiko, indikator, dan rekomendasi bukan merupakan nasihat hukum, audit forensik resmi, atau jaminan mutlak bahwa sebuah pesan 100% aman atau 100% scam. Selalu gunakan pertimbangan akal sehat dan verifikasi mandiri ke kontak resmi institusi terkait.
             </p>
           </div>
         </ScrollReveal>
@@ -57,7 +57,7 @@ export default function TermsPage() {
                 1. Penerimaan Ketentuan
               </h2>
               <p className="text-xs sm:text-sm leading-relaxed">
-                Dengan mengakses dan menggunakan website AntiScam, Anda menyetujui untuk terikat oleh Syarat dan Ketentuan ini. Jika Anda tidak menyetujui ketentuan ini, mohon untuk tidak menggunakan layanan kami.
+                Dengan mengakses dan menggunakan website Tumbasna, Anda menyetujui untuk terikat oleh Syarat dan Ketentuan ini. Jika Anda tidak menyetujui ketentuan ini, mohon untuk tidak menggunakan layanan kami.
               </p>
             </section>
           </ScrollReveal>
@@ -68,7 +68,7 @@ export default function TermsPage() {
                 2. Penggunaan yang Diizinkan
               </h2>
               <p className="text-xs sm:text-sm leading-relaxed">
-                Layanan AntiScam disediakan secara gratis untuk keperluan pribadi dalam memverifikasi pesan mencurigakan. Anda dilarang keras memanfaatkan layanan ini untuk:
+                Layanan Tumbasna disediakan secara gratis untuk keperluan pribadi dalam memverifikasi pesan mencurigakan. Anda dilarang keras memanfaatkan layanan ini untuk:
               </p>
 
               {/* Structured Prohibition List */}
@@ -94,7 +94,7 @@ export default function TermsPage() {
                 3. Batasan Tanggung Jawab
               </h2>
               <p className="text-xs sm:text-sm leading-relaxed">
-                Pengembang AntiScam tidak bertanggung jawab atas kerugian materiil, finansial, atau non-materiil yang timbul akibat tindakan pengguna setelah membaca hasil analisis pada website ini. Keputusan untuk mengklik tautan, mentransfer uang, atau mengabaikan pesan sepenuhnya berada di bawah tanggung jawab pengguna secara mandiri.
+                Pengembang Tumbasna tidak bertanggung jawab atas kerugian materiil, finansial, atau non-materiil yang timbul akibat tindakan pengguna setelah membaca hasil analisis pada website ini. Keputusan untuk mengklik tautan, mentransfer uang, atau mengabaikan pesan sepenuhnya berada di bawah tanggung jawab pengguna secara mandiri.
               </p>
             </section>
           </ScrollReveal>
