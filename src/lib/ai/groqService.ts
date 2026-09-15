@@ -1,5 +1,5 @@
-import { RiskLevel, ThreatCategory, ThreatIndicator, RecommendedAction, SingleAnalysisResponse } from '@/types/analysis';
-import { WhatsAppAnalysisRequest, WhatsAppAnalysisResponse, FlaggedBubbleResult, EscalationPhase } from '@/types/whatsapp';
+import { RiskLevel, ThreatCategory, ThreatIndicator, RecommendedAction } from '@/types/analysis';
+import { WhatsAppAnalysisRequest, FlaggedBubbleResult, EscalationPhase } from '@/types/whatsapp';
 
 const GROQ_API_KEY = process.env.GROQ_API_KEY;
 const GROQ_MODEL = process.env.GROQ_MODEL || 'llama-3.1-8b-instant';
@@ -33,39 +33,47 @@ export async function analyzeMessageWithGroq(messageText: string): Promise<GroqS
     return null;
   }
 
-  const systemPrompt = `Anda adalah "Tumbasna Security Intelligence Engine", sistem pakar forensik siber dan deteksi penipuan online/WhatsApp di Indonesia.
-Tugas Anda: Menganalisis pesan teks yang mencurigakan (SMS, WhatsApp, medsos, bukti transfer) untuk menentukan apakah pesan tersebut terindikasi scam atau aman.
+  const systemPrompt = `Anda adalah "Tumbasna Security Intelligence Engine", sistem pakar forensik siber dan deteksi penipuan online di Indonesia.
+Tugas Anda: Menganalisis pesan teks untuk menentukan secara adil dan akurat apakah pesan tersebut berisiko penipuan atau percakapan wajar.
 
-Analisis mencakup:
-1. File APK jahat (kurir palsu, surat tilang palsu, undangan pernikahan).
-2. Permintaan kredensial / OTP / PIN bank.
-3. Iming-iming hadiah atau bansos palsu.
-4. Phishing link & domain gratisan/palsu.
-5. Manipulasi urgensi / tekanan psikologis.
-6. Toko online bodong / penipuan transaksi belanja online ("tumbas").
+PANDUAN KLASIFIKASI:
+1. JIKA PESAN NORMAL / WAJAR (sapaan, obrolan keluarga/teman, percakapan sehari-hari, konfirmasi biasa):
+   - overallRiskLevel: "low"
+   - overallRiskScore: 5 sampai 15
+   - detectedScamType: "Pesan Normal / Aman"
+   - summary: "Pesan ini adalah komunikasi wajar sehari-hari dan tidak mengandung indikasi penipuan digital."
+   - indicators: [] (kosongkan)
+   - recommendations: [{"id": "rec_1", "priority": "optional", "actionText": "Tetap Waspada", "explanation": "Pesan ini aman, tetap jaga kehati-hatian secara umum."}]
 
-Kembalikan respon WAJIB berupa JSON murni dengan skema persis:
+2. HANYA TANDAI SEBAGAI SCAM (medium/high/critical) jika ada bukti nyata:
+   - File APK tidak resmi (.apk)
+   - Permintaan kode OTP / PIN bank rahasia
+   - Phishing link / tautan mencurigakan
+   - Iming-iming hadiah uang/bansos tanpa transaksi jelas
+   - Tekanan urgensi atau ancaman pemblokiran/penangkapan
+
+Kembalikan respon WAJIB berupa JSON murni dengan skema:
 {
   "riskLevel": "low" | "medium" | "high" | "critical",
   "riskScore": (integer 0 sampai 100),
-  "detectedScamType": "(String nama modus penipuan ringkas dalam Bahasa Indonesia)",
-  "summary": "(Ringkasan analisis 1-2 kalimat dalam Bahasa Indonesia yang edukatif)",
+  "detectedScamType": "(String nama status/modus)",
+  "summary": "(Ringkasan analisis)",
   "indicators": [
     {
       "id": "ind_1",
       "category": "suspicious_link" | "malicious_apk" | "urgency_pressure" | "financial_request" | "credential_harvesting" | "fake_reward" | "impersonation" | "suspicious_language" | "unknown_sender" | "social_engineering",
       "title": "Nama Indikator",
-      "description": "Penjelasan mengapa hal ini mencurigakan",
+      "description": "Penjelasan ancaman",
       "severity": "low" | "medium" | "high" | "critical",
-      "highlightSnippet": "potongan teks yang mencurigakan jika ada"
+      "highlightSnippet": "potongan teks jika ada"
     }
   ],
   "recommendations": [
     {
       "id": "rec_1",
       "priority": "must_do" | "should_do" | "optional",
-      "actionText": "Tindakan konkret (misal: Jangan klik link, Blokir nomor)",
-      "explanation": "Alasan tindakan ini penting dilakukan"
+      "actionText": "Saran tindakan",
+      "explanation": "Alasan tindakan"
     }
   ]
 }`;
@@ -116,21 +124,48 @@ export async function analyzeWhatsAppWithGroq(
     return null;
   }
 
-  const systemPrompt = `Anda adalah "Tumbasna Security Intelligence Engine", sistem pakar forensik percakapan WhatsApp dan pencegahan penipuan online di Indonesia.
-Tugas Anda: Menganalisis riwayat percakapan chat WhatsApp (multi-bubble) untuk memetakan alur manipulasi (escalation flow) dan menandai bubble chat yang berbahaya.
+  const systemPrompt = `Anda adalah "Tumbasna Security Intelligence Engine", sistem pakar forensik percakapan WhatsApp di Indonesia.
+Tugas Anda: Menganalisis riwayat obrolan WhatsApp untuk mendeteksi apakah ada modus penipuan ataukah hanya obrolan biasa yang aman.
+
+PANDUAN UTAMA PENILAIAN:
+1. JIKA OBROLAN BIASA / NORMAL (sapaan halo/hai, obrolan santai teman/keluarga, koordinasi tugas, janjian, percakapan sehari-hari tanpa modus kejahatan):
+   - overallRiskLevel WAJIB: "low"
+   - overallRiskScore WAJIB: 5 sampai 15
+   - detectedScamType: "Percakapan Normal / Tidak Berbahaya"
+   - summary: "Percakapan ini adalah obrolan biasa sehari-hari yang wajar. Tidak ditemukan indikasi modus penipuan, manipulasi, maupun tautan atau file berbahaya."
+   - flaggedMessages: [] (KOSONGKAN karena tidak ada pesan berbahaya)
+   - indicators: [] (KOSONGKAN)
+   - recommendations: [
+       {
+         "id": "rec_safe",
+         "priority": "optional",
+         "actionText": "Percakapan Aman",
+         "explanation": "Tidak ada indikator penipuan yang terdeteksi pada riwayat chat ini."
+       }
+     ]
+   - escalationFlow: [
+       {
+         "phaseNumber": 1,
+         "phaseName": "Komunikasi Normal",
+         "description": "Pertukaran pesan wajar antar pihak tanpa pola eskalasi penipuan."
+       }
+     ]
+
+2. JANGAN PERNAH menuduh chat biasa sebagai scam paket kurir atau APK jika tidak ada pembahasan file APK berbahaya atau modus penipuan!
+3. HANYA berikan skor risiko tinggi jika BENAR-BENAR ada indikator kejahatan siber (file APK kurir/tilang, phishing link, pencurian OTP/PIN, iming-iming hadiah bodong, atau pemaksaan transfer uang).
 
 Kembalikan respon WAJIB berupa JSON murni dengan skema:
 {
   "overallRiskLevel": "low" | "medium" | "high" | "critical",
   "overallRiskScore": (integer 0 - 100),
-  "detectedScamType": "(Nama modus, misal: Penipuan Kurir APK / Olshop Bodong)",
-  "summary": "(Ringkasan kesimpulan dalam Bahasa Indonesia edukatif)",
+  "detectedScamType": "(Nama status/modus)",
+  "summary": "(Ringkasan hasil evaluasi)",
   "flaggedMessages": [
     {
-      "messageId": "(id bubble yang relevan dari input)",
+      "messageId": "(id bubble yang relevan)",
       "riskLevel": "low" | "medium" | "high" | "critical",
       "triggerCategory": "malicious_apk" | "suspicious_link" | "credential_harvesting" | "fake_reward" | "urgency_pressure",
-      "reason": "(Alasan bubble ini berbahaya)"
+      "reason": "(Alasan bahaya)"
     }
   ],
   "indicators": [
@@ -146,15 +181,15 @@ Kembalikan respon WAJIB berupa JSON murni dengan skema:
     {
       "id": "rec_wa_1",
       "priority": "must_do" | "should_do" | "optional",
-      "actionText": "Tindakan wajib diambil",
-      "explanation": "Penjelasan mengapa harus dilakukan"
+      "actionText": "Saran tindakan",
+      "explanation": "Penjelasan"
     }
   ],
   "escalationFlow": [
     {
       "phaseNumber": 1,
-      "phaseName": "Tahap 1: Pendekatan Awal",
-      "description": "Deskripsi bagaimana pelaku memulai kontak"
+      "phaseName": "Tahap Alur",
+      "description": "Keterangan"
     }
   ]
 }`;

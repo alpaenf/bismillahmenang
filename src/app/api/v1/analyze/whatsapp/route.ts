@@ -155,23 +155,33 @@ export async function POST(request: Request) {
         });
       }
 
-      escalationFlow = [
-        {
-          phaseNumber: 1,
-          phaseName: 'Tahap 1: Pendekatan & Kontak Awal',
-          description: 'Pengirim menghubungi dengan pesan acak atau mengatasnamakan pihak tertentu.',
-        },
-        {
-          phaseNumber: 2,
-          phaseName: 'Tahap 2: Pembentukan Kepercayaan & Umpan',
-          description: 'Memberikan informasi hadiah, paket, atau masalah transaksi.',
-        },
-        {
-          phaseNumber: 3,
-          phaseName: 'Tahap 3: Eksekusi (Permintaan File / Link / OTP)',
-          description: 'Mengirimkan link atau file berbahaya untuk dieksekusi oleh korban.',
-        },
-      ];
+      if (hasApk || hasOtp || hasReward || (hasLink && hasUrgency)) {
+        escalationFlow = [
+          {
+            phaseNumber: 1,
+            phaseName: 'Tahap 1: Pendekatan & Kontak Awal',
+            description: 'Pengirim menghubungi dengan pesan acak atau mengatasnamakan pihak tertentu.',
+          },
+          {
+            phaseNumber: 2,
+            phaseName: 'Tahap 2: Pembentukan Kepercayaan & Umpan',
+            description: 'Memberikan informasi hadiah, paket, atau masalah transaksi.',
+          },
+          {
+            phaseNumber: 3,
+            phaseName: 'Tahap 3: Eksekusi (Permintaan File / Link / OTP)',
+            description: 'Mengirimkan link atau file berbahaya untuk dieksekusi oleh korban.',
+          },
+        ];
+      } else {
+        escalationFlow = [
+          {
+            phaseNumber: 1,
+            phaseName: 'Komunikasi Wajar',
+            description: 'Pertukaran pesan normal sehari-hari tanpa indikasi pola penipuan.',
+          },
+        ];
+      }
     }
 
     // 3. SIMPAN HASIL ANALISIS KE SUPABASE

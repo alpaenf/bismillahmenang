@@ -222,10 +222,39 @@ export async function simulateWhatsAppChatAnalysis(
     };
   }
 
-  // Default: APK Scam or High Risk simulation
+  if (hasApk) {
+    return {
+      ...MOCK_WHATSAPP_APK_SCAM,
+      id: `res_wa_${Date.now()}`,
+      timestamp: new Date().toISOString(),
+    };
+  }
+
+  // Default: Percakapan Normal / Aman
   return {
-    ...MOCK_WHATSAPP_APK_SCAM,
     id: `res_wa_${Date.now()}`,
     timestamp: new Date().toISOString(),
+    overallRiskLevel: 'low',
+    overallRiskScore: 10,
+    detectedScamType: 'Percakapan Normal / Aman',
+    summary: 'Percakapan ini adalah obrolan biasa yang aman dan tidak menunjukkan tanda-tanda penipuan digital.',
+    escalationFlow: [
+      {
+        phaseNumber: 1,
+        phaseName: 'Komunikasi Wajar',
+        description: 'Pertukaran pesan sehari-hari yang normal tanpa eskalasi ancaman.',
+      },
+    ],
+    flaggedMessages: [],
+    indicators: [],
+    recommendations: [
+      {
+        id: 'rec_safe',
+        priority: 'optional',
+        actionText: 'Percakapan Wajar',
+        explanation: 'Tidak ditemukan indikasi penipuan pada obrolan ini.',
+      },
+    ],
+    disclaimer: 'Analisis dihasilkan secara otomatis oleh sistem deteksi Tumbasna.',
   };
 }

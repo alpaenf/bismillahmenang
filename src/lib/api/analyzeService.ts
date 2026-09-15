@@ -3,7 +3,7 @@ import { WhatsAppAnalysisRequest, WhatsAppAnalysisResponse } from '@/types/whats
 import { simulateSingleMessageAnalysis, simulateWhatsAppChatAnalysis } from '../mock/mockApiResponse';
 import { postJson } from './apiClient';
 
-const USE_MOCK = process.env.NEXT_PUBLIC_USE_MOCK !== 'false';
+const USE_MOCK = process.env.NEXT_PUBLIC_USE_MOCK === 'true';
 
 export async function analyzeSingleMessage(
   request: SingleAnalysisRequest
