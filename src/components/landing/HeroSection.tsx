@@ -13,22 +13,20 @@ export function HeroSection() {
           {/* Left Column: Copy & CTA */}
           <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
             {/* Top Badge */}
-            <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-3.5 py-1.5 rounded-full bg-red-50 border border-red-200 text-[11px] sm:text-xs font-semibold text-red-950 max-w-full whitespace-nowrap shadow-xs">
-              <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse flex-shrink-0" />
-              <span className="font-extrabold tracking-tight">Tumbasna Security Engine</span>
-              <span className="text-red-300">•</span>
-              <span className="flex items-center gap-1 font-bold flex-shrink-0 text-red-800">
+            <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-3.5 py-1.5 rounded-full bg-neutral-100 border border-neutral-200 text-[11px] sm:text-xs font-semibold text-neutral-900 max-w-full whitespace-nowrap shadow-xs">
+              <span className="w-2 h-2 rounded-full bg-red-600 animate-pulse flex-shrink-0" />
+              <span className="font-extrabold tracking-tight text-black">Tumbasna Security Engine</span>
+              <span className="text-neutral-400">•</span>
+              <span className="flex items-center gap-1 font-bold flex-shrink-0 text-neutral-800">
                 <WhatsAppIcon colored size={13} />
                 <span>Analisis Chat WA & Pesan</span>
               </span>
             </div>
 
             {/* Headline */}
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-foreground tracking-tight leading-[1.08]">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-black tracking-tight leading-[1.08]">
               Cek Dulu Sebelum <br className="hidden sm:inline" />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 via-rose-600 to-black">
-                Tumbas & Transfer.
-              </span>
+              Tumbas & Transfer.
             </h1>
 
             {/* Sub-headline */}
