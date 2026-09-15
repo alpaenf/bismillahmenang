@@ -2,9 +2,8 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ShieldCheck } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import { MobileMenu } from './MobileMenu';
 import { cn } from '@/lib/utils/cn';
@@ -31,6 +30,7 @@ export function Navbar() {
 
   const navLinks = [
     { label: 'Beranda', href: '/' },
+    { label: 'Periksa Pesan & WA', href: '/analyze' },
     { label: 'Cara Kerja', href: '/how-it-works' },
     { label: 'Tentang Kami', href: '/about' },
   ];
@@ -53,22 +53,22 @@ export function Navbar() {
               : 'w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 bg-white/95 backdrop-blur-md border-b border-border'
           )}
         >
-          {/* Brand Logo */}
+          {/* Brand Logo Tumbasna */}
           <Link
             href="/"
-            className="flex items-center hover:opacity-90 transition-opacity"
+            className="flex items-center gap-2.5 hover:opacity-90 transition-opacity"
           >
-            <Image
-              src="/logo.png"
-              alt="AntiScam Logo"
-              width={140}
-              height={36}
-              className={cn(
-                'w-auto object-contain transition-all duration-300',
-                isScrolled ? 'h-6 sm:h-7' : 'h-7 sm:h-8'
-              )}
-              priority
-            />
+            <div className="w-8 h-8 rounded-xl bg-gradient-to-tr from-emerald-600 via-teal-600 to-emerald-500 flex items-center justify-center text-white shadow-sm flex-shrink-0">
+              <ShieldCheck className="w-5 h-5" />
+            </div>
+            <div className="flex items-center gap-1.5">
+              <span className="text-lg sm:text-xl font-extrabold tracking-tight text-foreground">
+                Tumbasna
+              </span>
+              <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-800 bg-emerald-100/90 px-1.5 py-0.5 rounded-full border border-emerald-200">
+                Safe
+              </span>
+            </div>
           </Link>
 
           {/* Desktop Navigation Links */}
@@ -101,7 +101,7 @@ export function Navbar() {
                   isScrolled ? 'rounded-full px-4 text-xs font-semibold' : 'rounded-xl'
                 )}
               >
-                Periksa Pesan
+                Cek Pesan / Chat
               </Button>
             </Link>
           </div>

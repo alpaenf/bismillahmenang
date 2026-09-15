@@ -12,27 +12,28 @@ const fontSans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: 'AntiScam — Know Before You Trust | Deteksi Pesan Penipuan & Chat WA',
+  title: 'Tumbasna — Cek Sebelum Beli & Transfer | Deteksi Penipuan Online & Chat WA',
   description:
-    'Periksa pesan mencurigakan dan riwayat chat WhatsApp untuk mendeteksi indikasi penipuan, phising link, file malware APK, dan modus rekayasa sosial sebelum Anda bertindak.',
+    'Platform keamanan digital & verifikasi transaksi online. Periksa pesan mencurigakan, tautan phising, APK malware, dan chat WhatsApp sebelum Anda bertransaksi, transfer dana, atau belanja (tumbas).',
   keywords: [
-    'anti scam',
-    'scam detector',
+    'tumbasna',
+    'anti scam indonesia',
+    'cek toko online penipu',
+    'cek rekening penipu',
     'cek pesan penipuan',
-    'ekspor chat wa penipuan',
-    'deteksi wa scam',
+    'deteksi chat wa penipuan',
     'cek link phising',
     'malware apk kurir',
-    'keamanan siber indonesia',
+    'belanja online aman',
   ],
-  authors: [{ name: 'AntiScam Security Team' }],
-  metadataBase: new URL('https://antiscam.id'),
+  authors: [{ name: 'Tumbasna Security Team' }],
+  metadataBase: new URL('https://tumbasna.my.id'),
   openGraph: {
-    title: 'AntiScam — Know Before You Trust',
+    title: 'Tumbasna — Cek Sebelum Beli & Transfer',
     description:
-      'Periksa pesan mencurigakan dan riwayat chat WhatsApp untuk mendeteksi indikasi penipuan sebelum mengklik link atau transfer dana.',
-    url: 'https://antiscam.id',
-    siteName: 'AntiScam',
+      'Periksa pesan mencurigakan dan riwayat chat WhatsApp untuk mendeteksi indikasi penipuan sebelum mentransfer dana atau belanja online.',
+    url: 'https://tumbasna.my.id',
+    siteName: 'Tumbasna',
     locale: 'id_ID',
     type: 'website',
   },

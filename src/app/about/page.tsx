@@ -6,9 +6,9 @@ import { Button } from '@/components/ui/Button';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 
 export const metadata: Metadata = {
-  title: 'Tentang AntiScam & Misi Perlindungan Digital | AntiScam',
+  title: 'Tentang Tumbasna & Misi Perlindungan Transaksi Digital',
   description:
-    'Misi kami adalah membuat proses verifikasi pesan mencurigakan menjadi mudah, cepat, dan dapat diakses oleh semua lapisan masyarakat.',
+    'Misi Tumbasna adalah membuat proses verifikasi pesan mencurigakan, chat WhatsApp, dan transaksi jual-beli online menjadi mudah, cepat, dan aman bagi masyarakat Indonesia.',
 };
 
 export default function AboutPage() {
@@ -22,10 +22,10 @@ export default function AboutPage() {
               Mengenal Lebih Dekat
             </div>
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-foreground tracking-tight">
-              Tentang AntiScam
+              Tentang Tumbasna
             </h1>
             <p className="text-base sm:text-lg text-foreground-secondary max-w-2xl mx-auto leading-relaxed">
-              Menghadirkan alat bantu keamanan digital yang sederhana agar setiap orang tahu sebelum mempercayai.
+              Cek Dulu Sebelum Tumbas & Transfer. Menghadirkan alat bantu keamanan digital dan verifikasi transaksi online agar setiap orang tahu sebelum mempercayai.
             </p>
           </div>
         </ScrollReveal>
@@ -34,29 +34,29 @@ export default function AboutPage() {
         <ScrollReveal direction="up" delay={150}>
           <div className="bg-white border border-border rounded-3xl p-6 sm:p-10 shadow-sm space-y-6 text-sm sm:text-base text-foreground-secondary leading-relaxed hover:shadow-md transition-shadow">
             <h2 className="text-xl sm:text-2xl font-bold text-foreground">
-              Mengapa Kami Membangun AntiScam?
+              Mengapa Kami Membangun Tumbasna?
             </h2>
             <p>
-              Modus penipuan digital kini semakin canggih dan meyakinkan. Dari impersonasi kurir pengantar paket yang mengirimkan file APK berbahaya, undangan pernikahan palsu, hingga tawaran hadiah undian puluhan juta rupiah yang meminta biaya administrasi.
+              Kata <strong>&ldquo;Tumbas&rdquo;</strong> dalam bahasa lokal berarti <strong>&ldquo;Beli&rdquo;</strong>. Di era serba digital, transaksi jual-beli dan interaksi pesan instan semakin rawan disusupi oleh penipu ulung. Mulai dari olshop fiktif di media sosial, modus kurir paket pengirim file APK penyadap rekening, hingga tautan phishing berkedok promo hadiah.
             </p>
             <p>
-              Banyak korban tertipu bukan karena kurang berhati-hati, melainkan karena tidak memiliki alat yang mudah untuk menguji apakah pesan atau alur percakapan WhatsApp yang mereka terima merupakan pola manipulasi psikologis (*social engineering*).
+              Banyak orang menjadi korban bukan karena ceroboh, melainkan karena tidak memiliki sarana mudah dan cepat untuk memverifikasi apakah sebuah pesan, bukti transfer, atau percakapan WhatsApp memiliki indikasi manipulasi psikologis (*social engineering*).
             </p>
             <p>
-              AntiScam hadir untuk menjawab 3 pertanyaan esensial dalam hitungan detik:
+              Tumbasna hadir untuk menjawab 3 pertanyaan esensial sebelum Anda mengambil tindakan atau mentransfer uang:
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
               <div className="p-4 rounded-2xl bg-background-subtle border border-border hover:border-gray-400 transition-colors">
                 <span className="font-bold text-foreground block mb-1">1. Seberapa Berisiko?</span>
-                <span className="text-xs">Skor probabilitas risiko pesan yang jelas dan terukur.</span>
+                <span className="text-xs">Skor probabilitas risiko pesan yang jelas dan terukur (0 - 100).</span>
               </div>
               <div className="p-4 rounded-2xl bg-background-subtle border border-border hover:border-gray-400 transition-colors">
                 <span className="font-bold text-foreground block mb-1">2. Mengapa Berisiko?</span>
-                <span className="text-xs">Indikator ancaman diuraikan dengan bahasa sederhana.</span>
+                <span className="text-xs">Indikator ancaman diuraikan dengan bahasa sederhana dan manusiawi.</span>
               </div>
               <div className="p-4 rounded-2xl bg-background-subtle border border-border hover:border-gray-400 transition-colors">
                 <span className="font-bold text-foreground block mb-1">3. Apa yang Harus Dilakukan?</span>
-                <span className="text-xs">Rekomendasi langkah mitigasi konkret seketika.</span>
+                <span className="text-xs">Rekomendasi langkah mitigasi konkret dan terarah seketika.</span>
               </div>
             </div>
           </div>
@@ -66,7 +66,7 @@ export default function AboutPage() {
         <div className="space-y-6">
           <ScrollReveal direction="up">
             <h2 className="text-xl sm:text-2xl font-bold text-foreground text-center">
-              Prinsip & Pendekatan Kami
+              Prinsip & Nilai Keamanan Tumbasna
             </h2>
           </ScrollReveal>
 
@@ -74,11 +74,11 @@ export default function AboutPage() {
             <ScrollReveal direction="up" delay={100}>
               <div className="p-6 rounded-3xl bg-white border border-border space-y-3 shadow-xs hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 h-full">
                 <div className="w-10 h-10 rounded-xl bg-background-muted border border-border flex items-center justify-center text-foreground">
-                  <Sparkles className="w-5 h-5 text-foreground" aria-hidden="true" />
+                  <Sparkles className="w-5 h-5 text-emerald-600" aria-hidden="true" />
                 </div>
                 <h3 className="text-base font-bold text-foreground">Kejelasan (Clarity)</h3>
                 <p className="text-xs sm:text-sm text-foreground-secondary leading-relaxed">
-                  Menghindari istilah teknis rumit. Hasil disajikan dalam format yang mudah dipahami siapa saja.
+                  Bebas dari istilah teknis membingungkan. Hasil disajikan dalam format yang langsung dimengerti orang awam.
                 </p>
               </div>
             </ScrollReveal>
@@ -86,11 +86,11 @@ export default function AboutPage() {
             <ScrollReveal direction="up" delay={200}>
               <div className="p-6 rounded-3xl bg-white border border-border space-y-3 shadow-xs hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 h-full">
                 <div className="w-10 h-10 rounded-xl bg-background-muted border border-border flex items-center justify-center text-foreground">
-                  <Eye className="w-5 h-5 text-foreground" aria-hidden="true" />
+                  <Eye className="w-5 h-5 text-emerald-600" aria-hidden="true" />
                 </div>
-                <h3 className="text-base font-bold text-foreground">Privasi Total (Privacy)</h3>
+                <h3 className="text-base font-bold text-foreground">Privasi Terjaga</h3>
                 <p className="text-xs sm:text-sm text-foreground-secondary leading-relaxed">
-                  Pemrosesan chat WhatsApp dilakukan di browser lokal dengan sensor nomor telepon & rekening otomatis.
+                  Pemrosesan riwayat chat dilindungi sensor data sensitif (nomor telepon & rekening) sebelum dievaluasi.
                 </p>
               </div>
             </ScrollReveal>
@@ -98,11 +98,11 @@ export default function AboutPage() {
             <ScrollReveal direction="up" delay={300}>
               <div className="p-6 rounded-3xl bg-white border border-border space-y-3 shadow-xs hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 h-full">
                 <div className="w-10 h-10 rounded-xl bg-background-muted border border-border flex items-center justify-center text-foreground">
-                  <HeartHandshake className="w-5 h-5 text-foreground" aria-hidden="true" />
+                  <HeartHandshake className="w-5 h-5 text-emerald-600" aria-hidden="true" />
                 </div>
-                <h3 className="text-base font-bold text-foreground">Transparansi</h3>
+                <h3 className="text-base font-bold text-foreground">Transparansi Komunitas</h3>
                 <p className="text-xs sm:text-sm text-foreground-secondary leading-relaxed">
-                  Kami selalu menegaskan bahwa hasil analisis otomatis merupakan alat bantu deteksi pola, bukan jaminan hukum mutlak.
+                  Mendukung keterbukaan informasi agar masyarakat saling melindungi dari bahaya penipuan online.
                 </p>
               </div>
             </ScrollReveal>
@@ -114,7 +114,7 @@ export default function AboutPage() {
           <div className="text-center pt-4">
             <Link href="/analyze">
               <Button size="lg" variant="primary" className="gap-2">
-                <span>Coba AntiScam Sekarang</span>
+                <span>Coba Periksa Sekarang</span>
                 <ArrowRight className="w-4 h-4" aria-hidden="true" />
               </Button>
             </Link>

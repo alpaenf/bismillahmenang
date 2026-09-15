@@ -34,7 +34,7 @@ export function ValuePropSection() {
               Lebih dari Sekadar Pengecek Pesan
             </h2>
             <p className="text-sm sm:text-base text-foreground-secondary leading-relaxed">
-              AntiScam membantu Anda mengambil keputusan tepat sebelum risiko penipuan digital terjadi.
+              Tumbasna membantu Anda mengambil keputusan tepat sebelum risiko penipuan digital terjadi saat belanja atau bertransaksi online.
             </p>
           </div>
         </ScrollReveal>

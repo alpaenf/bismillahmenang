@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { ArrowRight, ShieldCheck, AlertTriangle, FileWarning, ExternalLink } from 'lucide-react';
+import { ArrowRight, ShieldCheck, AlertTriangle, FileWarning } from 'lucide-react';
 import { WhatsAppIcon } from '@/components/ui/WhatsAppIcon';
 import { Button } from '@/components/ui/Button';
 import { Badge } from '@/components/ui/Badge';
@@ -13,34 +13,34 @@ export function HeroSection() {
           {/* Left Column: Copy & CTA */}
           <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
             {/* Top Badge */}
-            <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-3.5 py-1.5 rounded-full bg-background-muted border border-border text-[11px] sm:text-xs font-medium text-foreground max-w-full whitespace-nowrap shadow-xs">
+            <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-[11px] sm:text-xs font-medium text-emerald-900 max-w-full whitespace-nowrap shadow-xs">
               <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse flex-shrink-0" />
-              <span className="font-semibold">AntiScam Engine</span>
-              <span className="text-foreground-muted">•</span>
-              <span className="text-foreground flex items-center gap-1 font-bold flex-shrink-0">
+              <span className="font-semibold">Tumbasna Security Engine</span>
+              <span className="text-emerald-300">•</span>
+              <span className="flex items-center gap-1 font-bold flex-shrink-0 text-emerald-800">
                 <WhatsAppIcon colored size={13} />
-                <span>Ekspor Chat WA</span>
+                <span>Analisis Chat WA & Pesan</span>
               </span>
             </div>
 
             {/* Headline */}
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-foreground tracking-tight leading-[1.1]">
-              Know Before <br className="hidden sm:inline" />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-900 via-gray-700 to-gray-500">
-                You Trust.
+              Cek Dulu Sebelum <br className="hidden sm:inline" />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600">
+                Tumbas & Transfer.
               </span>
             </h1>
 
             {/* Sub-headline */}
             <p className="text-base sm:text-lg text-foreground-secondary max-w-xl mx-auto lg:mx-0 leading-relaxed">
-              Periksa pesan mencurigakan dan riwayat chat WhatsApp untuk memahami indikator risiko sebelum Anda mengklik tautan, mentransfer dana, atau membagikan data sensitif.
+              Platform keamanan digital dan verifikasi transaksi online. Periksa pesan mencurigakan, phishing link, dan riwayat percakapan WhatsApp sebelum Anda mentransfer dana, membagikan OTP, atau belanja online.
             </p>
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 pt-2">
               <Link href="/analyze" className="w-full sm:w-auto">
                 <Button size="lg" variant="primary" className="w-full justify-center">
-                  <span>Periksa Pesan Sekarang</span>
+                  <span>Mulai Periksa Sekarang</span>
                   <ArrowRight className="w-4 h-4 ml-1.5" aria-hidden="true" />
                 </Button>
               </Link>
@@ -54,11 +54,11 @@ export function HeroSection() {
             {/* Trust Points */}
             <div className="pt-6 border-t border-border/80 flex flex-wrap items-center justify-center lg:justify-start gap-6 text-xs text-foreground-secondary">
               <div className="flex items-center gap-1.5">
-                <ShieldCheck className="w-4 h-4 text-foreground" aria-hidden="true" />
-                <span>100% Gratis & Tanpa Login</span>
+                <ShieldCheck className="w-4 h-4 text-emerald-600" aria-hidden="true" />
+                <span>100% Gratis & Bebas Akses</span>
               </div>
               <div className="flex items-center gap-1.5">
-                <ShieldCheck className="w-4 h-4 text-foreground" aria-hidden="true" />
+                <ShieldCheck className="w-4 h-4 text-emerald-600" aria-hidden="true" />
                 <span>Privasi Terjaga (Sensor PII Lokal)</span>
               </div>
             </div>
@@ -106,7 +106,7 @@ export function HeroSection() {
               <div className="p-3 rounded-xl bg-foreground text-white text-xs space-y-1">
                 <div className="font-bold flex items-center gap-1.5">
                   <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" aria-hidden="true" />
-                  Saran Keamanan:
+                  Saran Keamanan Tumbasna:
                 </div>
                 <p className="text-gray-300 text-[11px] leading-tight">
                   Jangan pernah unduh atau instal file .APK dari nomor tidak dikenal.

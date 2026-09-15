@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
+import { ShieldCheck } from 'lucide-react';
 
 export function Footer() {
   return (
@@ -9,34 +9,33 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
           {/* Col 1: Brand Info */}
           <div className="space-y-4 md:col-span-1">
-            <Link href="/" className="inline-block hover:opacity-90 transition-opacity">
-              <Image
-                src="/logo.png"
-                alt="AntiScam"
-                width={130}
-                height={34}
-                className="h-7 w-auto object-contain"
-              />
+            <Link href="/" className="flex items-center gap-2 hover:opacity-90 transition-opacity">
+              <div className="w-7 h-7 rounded-lg bg-gradient-to-tr from-emerald-600 to-teal-500 flex items-center justify-center text-white shadow-xs">
+                <ShieldCheck className="w-4 h-4" />
+              </div>
+              <span className="text-lg font-extrabold tracking-tight text-foreground">
+                Tumbasna
+              </span>
             </Link>
             <p className="text-xs md:text-sm text-foreground-secondary leading-relaxed">
-              Know Before You Trust. Alat keamanan independen untuk mendeteksi indikasi penipuan pada pesan teks dan percakapan WhatsApp.
+              Cek Dulu Sebelum Tumbas & Transfer. Platform keamanan digital untuk memverifikasi keaslian pesan, chat WhatsApp, dan transaksi online di Indonesia.
             </p>
           </div>
 
           {/* Col 2: Product */}
           <div>
             <h4 className="text-xs font-semibold text-foreground uppercase tracking-wider mb-4">
-              Produk
+              Layanan
             </h4>
             <ul className="space-y-2.5 text-sm text-foreground-secondary">
               <li>
                 <Link href="/analyze" className="hover:text-foreground transition-colors">
-                  Periksa Pesan
+                  Periksa Pesan Teks
                 </Link>
               </li>
               <li>
                 <Link href="/analyze" className="hover:text-foreground transition-colors">
-                  Analisis Ekspor WhatsApp
+                  Analisis Ekspor Chat WA
                 </Link>
               </li>
               <li>
@@ -55,12 +54,12 @@ export function Footer() {
             <ul className="space-y-2.5 text-sm text-foreground-secondary">
               <li>
                 <Link href="/about" className="hover:text-foreground transition-colors">
-                  Tentang AntiScam
+                  Tentang Tumbasna
                 </Link>
               </li>
               <li>
                 <Link href="/how-it-works#categories" className="hover:text-foreground transition-colors">
-                  Kategori Penipuan
+                  Kategori Modus Penipuan
                 </Link>
               </li>
             </ul>
@@ -69,17 +68,17 @@ export function Footer() {
           {/* Col 4: Legal */}
           <div>
             <h4 className="text-xs font-semibold text-foreground uppercase tracking-wider mb-4">
-              Legalitas & Privasi
+              Privasi & Keamanan
             </h4>
             <ul className="space-y-2.5 text-sm text-foreground-secondary">
               <li>
                 <Link href="/privacy" className="hover:text-foreground transition-colors">
-                  Kebijakan Privasi (PII)
+                  Kebijakan Privasi (Data PII)
                 </Link>
               </li>
               <li>
                 <Link href="/terms" className="hover:text-foreground transition-colors">
-                  Syarat & Ketentuan
+                  Syarat & Ketentuan Layanan
                 </Link>
               </li>
             </ul>
@@ -87,9 +86,9 @@ export function Footer() {
         </div>
 
         <div className="pt-8 border-t border-border flex flex-col sm:flex-row items-center justify-between text-xs text-foreground-muted gap-4">
-          <p>© 2026 AntiScam. Seluruh hak cipta dilindungi.</p>
+          <p>© 2026 Tumbasna (tumbasna.my.id). Seluruh hak cipta dilindungi.</p>
           <p>
-            Data chat diproses secara lokal di browser Anda untuk perlindungan privasi.
+            Verifikasi aman & data percakapan dilindungi dengan sensor privasi lokal.
           </p>
         </div>
       </div>

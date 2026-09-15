@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: ['/api/'],
     },
-    sitemap: 'https://antiscam.id/sitemap.xml',
+    sitemap: 'https://tumbasna.my.id/sitemap.xml',
   };
 }

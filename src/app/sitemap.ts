@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://antiscam.id';
+  const baseUrl = 'https://tumbasna.my.id';
   const lastModified = new Date();
 
   return [

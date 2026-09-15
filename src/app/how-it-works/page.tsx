@@ -24,9 +24,9 @@ import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { DetectionCategories } from '@/components/landing/DetectionCategories';
 
 export const metadata: Metadata = {
-  title: 'Cara Kerja AntiScam & Metode Analisis Pesan | AntiScam',
+  title: 'Cara Kerja Tumbasna & Metode Verifikasi Pesan | Tumbasna',
   description:
-    'Pelajari bagaimana AntiScam memproses pesan tunggal SMS/medsos dan riwayat chat WhatsApp, mendeteksi pola 8 kategori penipuan, dan mengevaluasi tingkat risiko.',
+    'Pelajari bagaimana Tumbasna memproses pesan tunggal dan riwayat chat WhatsApp, mendeteksi pola penipuan, dan mengevaluasi tingkat risiko transaksi online.',
 };
 
 export default function HowItWorksPage() {

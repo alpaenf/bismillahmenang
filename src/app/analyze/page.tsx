@@ -3,9 +3,9 @@ import type { Metadata } from 'next';
 import { AnalyzerContainer } from '@/components/analyzer/AnalyzerContainer';
 
 export const metadata: Metadata = {
-  title: 'Periksa Pesan & Analisis Chat WhatsApp | AntiScam',
+  title: 'Periksa Pesan & Analisis Chat WhatsApp | Tumbasna',
   description:
-    'Deteksi indikasi scam pada pesan SMS, WhatsApp, atau file ekspor chat. Dapatkan skor risiko, detail ancaman, dan langkah keamanan yang tepat.',
+    'Deteksi indikasi scam pada pesan SMS, WhatsApp, atau file ekspor chat sebelum Anda transfer atau bertransaksi online. Dapatkan skor risiko dan langkah pencegahan tepat.',
 };
 
 export default function AnalyzePage() {
