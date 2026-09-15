@@ -4,6 +4,8 @@ import { WhatsAppAnalysisRequest, WhatsAppAnalysisResponse, FlaggedBubbleResult,
 import { RiskLevel, ThreatIndicator, RecommendedAction } from '@/types/analysis';
 import { analyzeWhatsAppWithGroq } from '@/lib/ai/groqService';
 
+export const dynamic = 'force-dynamic';
+
 export async function POST(request: Request) {
   try {
     const body: WhatsAppAnalysisRequest = await request.json();

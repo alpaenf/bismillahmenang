@@ -3,6 +3,8 @@ import { createClient } from '@/lib/supabase/server';
 import { SingleAnalysisRequest, SingleAnalysisResponse, RiskLevel, ThreatIndicator, RecommendedAction } from '@/types/analysis';
 import { analyzeMessageWithGroq } from '@/lib/ai/groqService';
 
+export const dynamic = 'force-dynamic';
+
 export async function POST(request: Request) {
   try {
     const body: SingleAnalysisRequest = await request.json();
