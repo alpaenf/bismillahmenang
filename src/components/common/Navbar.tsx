@@ -2,8 +2,9 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { Menu, X, ShieldCheck } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import { MobileMenu } from './MobileMenu';
 import { cn } from '@/lib/utils/cn';
@@ -49,30 +50,30 @@ export function Navbar() {
           className={cn(
             'pointer-events-auto transition-all duration-300 ease-in-out flex items-center justify-between',
             isScrolled
-              ? 'w-full max-w-4xl mx-auto rounded-full bg-white/85 backdrop-blur-xl border border-border/80 shadow-lg shadow-black/5 px-5 sm:px-7 h-14'
+              ? 'w-full max-w-4xl mx-auto rounded-full bg-white/90 backdrop-blur-xl border border-border/80 shadow-lg shadow-black/5 px-5 sm:px-7 h-14'
               : 'w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 bg-white/95 backdrop-blur-md border-b border-border'
           )}
         >
           {/* Brand Logo Tumbasna */}
           <Link
             href="/"
-            className="flex items-center gap-2.5 hover:opacity-90 transition-opacity"
+            className="flex items-center hover:opacity-90 transition-opacity"
           >
-            <div className="w-8 h-8 rounded-xl bg-gradient-to-tr from-emerald-600 via-teal-600 to-emerald-500 flex items-center justify-center text-white shadow-sm flex-shrink-0">
-              <ShieldCheck className="w-5 h-5" />
-            </div>
-            <div className="flex items-center gap-1.5">
-              <span className="text-lg sm:text-xl font-extrabold tracking-tight text-foreground">
-                Tumbasna
-              </span>
-              <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-800 bg-emerald-100/90 px-1.5 py-0.5 rounded-full border border-emerald-200">
-                Safe
-              </span>
-            </div>
+            <Image
+              src="/logo.png"
+              alt="Tumbasna"
+              width={160}
+              height={44}
+              priority
+              className={cn(
+                'w-auto object-contain transition-all duration-300',
+                isScrolled ? 'h-7 sm:h-8' : 'h-8 sm:h-9'
+              )}
+            />
           </Link>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-foreground-secondary">
+          <nav className="hidden md:flex items-center gap-7 text-sm font-bold tracking-tight text-foreground/80">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
               return (
@@ -81,7 +82,7 @@ export function Navbar() {
                   href={link.href}
                   className={cn(
                     'transition-colors hover:text-foreground',
-                    isActive ? 'text-foreground font-semibold' : ''
+                    isActive ? 'text-foreground font-extrabold' : ''
                   )}
                 >
                   {link.label}
@@ -97,8 +98,8 @@ export function Navbar() {
                 size={isScrolled ? 'sm' : 'md'}
                 variant="primary"
                 className={cn(
-                  'transition-all duration-300',
-                  isScrolled ? 'rounded-full px-4 text-xs font-semibold' : 'rounded-xl'
+                  'transition-all duration-300 font-bold tracking-tight bg-black hover:bg-neutral-800 text-white shadow-sm',
+                  isScrolled ? 'rounded-full px-4 text-xs' : 'rounded-xl'
                 )}
               >
                 Cek Pesan / Chat

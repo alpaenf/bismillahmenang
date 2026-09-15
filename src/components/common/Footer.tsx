@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { ShieldCheck } from 'lucide-react';
+import Image from 'next/image';
 
 export function Footer() {
   return (
@@ -9,13 +9,14 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
           {/* Col 1: Brand Info */}
           <div className="space-y-4 md:col-span-1">
-            <Link href="/" className="flex items-center gap-2 hover:opacity-90 transition-opacity">
-              <div className="w-7 h-7 rounded-lg bg-gradient-to-tr from-emerald-600 to-teal-500 flex items-center justify-center text-white shadow-xs">
-                <ShieldCheck className="w-4 h-4" />
-              </div>
-              <span className="text-lg font-extrabold tracking-tight text-foreground">
-                Tumbasna
-              </span>
+            <Link href="/" className="inline-block hover:opacity-90 transition-opacity">
+              <Image
+                src="/logo.png"
+                alt="Tumbasna"
+                width={150}
+                height={40}
+                className="h-8 w-auto object-contain"
+              />
             </Link>
             <p className="text-xs md:text-sm text-foreground-secondary leading-relaxed">
               Cek Dulu Sebelum Tumbas & Transfer. Platform keamanan digital untuk memverifikasi keaslian pesan, chat WhatsApp, dan transaksi online di Indonesia.
